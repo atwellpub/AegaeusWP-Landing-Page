@@ -60,6 +60,24 @@ $call_to_action_ = get_field("call_to_action_", $post_id);
 			margin-left: -60px;
 			width: 990px;
 		}
+
+		.footer-nav li {
+			float:left;
+			margin-left:10px;
+		}
+
+		#main-inner-wrapper ol {
+			list-style-type: decimal;
+			list-style-position: inside;
+			margin-left:6px;
+		}
+
+		#main-inner-wrapper ul {
+			list-style-type: disc;
+			list-style-position: inside;
+			margin-left:6px;
+		}
+
 		.flex-container-row {
 			display: -webkit-flex; /* Safari */
 			display: flex;
@@ -127,6 +145,7 @@ $call_to_action_ = get_field("call_to_action_", $post_id);
 		}
 		.tagline {
 			display: block;
+			text-align: center;
 		}
 		#footer-cta-area {
 			position: relative;
@@ -236,6 +255,8 @@ $call_to_action_ = get_field("call_to_action_", $post_id);
 		#footer-cta-area {
 			padding-top: 40px;
 			padding-bottom: 40px;
+			padding-right: 40px;
+			padding-left: 40px;
 		}
 		#footer-cta-area h4 {
 			color: #f4f4f4 !important;
@@ -272,6 +293,29 @@ $call_to_action_ = get_field("call_to_action_", $post_id);
 				margin-left: auto;
 				margin-right: auto;
 				width: 129%;
+			}
+		}
+
+		@media (max-width: 900px) {
+			#slider-section, .container, .footer-inner {
+				width: 100%;
+			}
+			body #sidebar-page-wrapper {
+				margin-left: -60px;
+				width: 100%;
+			}
+
+			#main-content-with-sidebar [class *="col-"], [class *="col-"] {
+				width: 100%;
+				margin-bottom: 30px;
+				float: none;
+			}
+
+			iframe {
+				width: 110%;
+			}
+			#content {
+				margin-top: 10px;
 			}
 		}
 	</style>
@@ -333,11 +377,11 @@ $call_to_action_ = get_field("call_to_action_", $post_id);
 		</div>
 		<div id="right-column">
 			<div id="right-column-call-to-action">
-				<?php echo $call_to_action_area_for_form; ?>
+				<?php echo do_shortcode($call_to_action_area_for_form); ?>
 			</div>
 
 			<div id="right-column-testimonials">
-				<?php echo $testimonials; ?>
+				<?php echo do_shortcode($testimonials); ?>
 			</div>
 
 
